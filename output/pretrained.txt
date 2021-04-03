@@ -1,0 +1,2127 @@
+Total Params: 98957
+Gatv2ZincNet(
+  (embedding): Embedding(28, 104)
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GATv2Conv(104, 13, heads=8)
+      (1): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GATv2Conv(104, 13, heads=8)
+      (1): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GATv2Conv(104, 13, heads=8)
+      (1): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GATv2Conv(104, 104, heads=1)
+      (1): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=104, out_features=52, bias=True)
+    (1): BatchNorm1d(52, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=52, out_features=26, bias=True)
+    (5): BatchNorm1d(26, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=26, out_features=1, bias=True)
+  )
+)
+{'lr': 0.004492024637681755, 'batch_size': 128, 'wd': 0.00018406568206249198}
+({'test_loss': 0.43026209622621536}, None)
+Total Params: 102861
+EgcZincNet(
+  (embedding): Embedding(28, 168)
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=168, out_features=84, bias=True)
+    (1): BatchNorm1d(84, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=84, out_features=42, bias=True)
+    (5): BatchNorm1d(42, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=42, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00278434576243951, 'batch_size': 64, 'wd': 0.00015614444389379077}
+({'test_loss': 0.36390698328614235}, None)
+Total Params: 100385
+EgcZincNet(
+  (embedding): Embedding(28, 124)
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=124, Out=124, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=124, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 124x31]
+            (1): Parameter containing: [torch.FloatTensor of size 124x31]
+            (2): Parameter containing: [torch.FloatTensor of size 124x31]
+            (3): Parameter containing: [torch.FloatTensor of size 124x31]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=124, Out=124, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=124, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 124x31]
+            (1): Parameter containing: [torch.FloatTensor of size 124x31]
+            (2): Parameter containing: [torch.FloatTensor of size 124x31]
+            (3): Parameter containing: [torch.FloatTensor of size 124x31]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=124, Out=124, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=124, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 124x31]
+            (1): Parameter containing: [torch.FloatTensor of size 124x31]
+            (2): Parameter containing: [torch.FloatTensor of size 124x31]
+            (3): Parameter containing: [torch.FloatTensor of size 124x31]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=124, Out=124, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=124, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 124x31]
+            (1): Parameter containing: [torch.FloatTensor of size 124x31]
+            (2): Parameter containing: [torch.FloatTensor of size 124x31]
+            (3): Parameter containing: [torch.FloatTensor of size 124x31]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=124, out_features=62, bias=True)
+    (1): BatchNorm1d(62, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=62, out_features=31, bias=True)
+    (5): BatchNorm1d(31, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=31, out_features=1, bias=True)
+  )
+)
+{'lr': 0.0019099809690277627, 'batch_size': 64, 'wd': 0.00020407622034162426}
+({'test_loss': 0.28015242237597704}, None)
+Total Params: 96912
+Gatv2CifarNet(
+  (embedding): Linear(in_features=5, out_features=104, bias=True)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Dropout(p=0.0901933116435249, inplace=False)
+      (1): GATv2Conv(104, 13, heads=8)
+      (2): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (1): ModuleList(
+      (0): Dropout(p=0.0901933116435249, inplace=False)
+      (1): GATv2Conv(104, 13, heads=8)
+      (2): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (2): ModuleList(
+      (0): Dropout(p=0.0901933116435249, inplace=False)
+      (1): GATv2Conv(104, 13, heads=8)
+      (2): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (3): ModuleList(
+      (0): Dropout(p=0.0901933116435249, inplace=False)
+      (1): GATv2Conv(104, 104, heads=1)
+      (2): BatchNorm1d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=104, out_features=52, bias=True)
+    (1): BatchNorm1d(52, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=52, out_features=26, bias=True)
+    (5): BatchNorm1d(26, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=26, out_features=10, bias=True)
+  )
+)
+{'lr': 0.001563799299082841, 'batch_size': 32, 'wd': 0.0003861817258519834, 'dropout': 0.0901933116435249}
+({'test_loss': 0.931029178749639, 'test_acc': 0.6744}, None)
+Total Params: 99552
+EgcCifarNet(
+  (embedding): Linear(in_features=5, out_features=168, bias=True)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Dropout(p=0.13094687106367725, inplace=False)
+      (1): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (2): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (1): ModuleList(
+      (0): Dropout(p=0.13094687106367725, inplace=False)
+      (1): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (2): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (2): ModuleList(
+      (0): Dropout(p=0.13094687106367725, inplace=False)
+      (1): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (2): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (3): ModuleList(
+      (0): Dropout(p=0.13094687106367725, inplace=False)
+      (1): EfficientGraphConv(
+        (In=168, Out=168, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=168, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 168x21]
+            (1): Parameter containing: [torch.FloatTensor of size 168x21]
+            (2): Parameter containing: [torch.FloatTensor of size 168x21]
+            (3): Parameter containing: [torch.FloatTensor of size 168x21]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (2): BatchNorm1d(168, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=168, out_features=84, bias=True)
+    (1): BatchNorm1d(84, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=84, out_features=42, bias=True)
+    (5): BatchNorm1d(42, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=42, out_features=10, bias=True)
+  )
+)
+{'lr': 0.0012354800908953303, 'batch_size': 32, 'wd': 0.000453476392621599, 'dropout': 0.13094687106367725}
+({'test_loss': 0.9905990363119509, 'test_acc': 0.6685}, None)
+Total Params: 103466
+EgcCifarNet(
+  (embedding): Linear(in_features=5, out_features=128, bias=True)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Dropout(p=0.08118925150158363, inplace=False)
+      (1): EfficientGraphConv(
+        (In=128, Out=128, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=128, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 128x32]
+            (1): Parameter containing: [torch.FloatTensor of size 128x32]
+            (2): Parameter containing: [torch.FloatTensor of size 128x32]
+            (3): Parameter containing: [torch.FloatTensor of size 128x32]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (1): ModuleList(
+      (0): Dropout(p=0.08118925150158363, inplace=False)
+      (1): EfficientGraphConv(
+        (In=128, Out=128, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=128, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 128x32]
+            (1): Parameter containing: [torch.FloatTensor of size 128x32]
+            (2): Parameter containing: [torch.FloatTensor of size 128x32]
+            (3): Parameter containing: [torch.FloatTensor of size 128x32]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (2): ModuleList(
+      (0): Dropout(p=0.08118925150158363, inplace=False)
+      (1): EfficientGraphConv(
+        (In=128, Out=128, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=128, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 128x32]
+            (1): Parameter containing: [torch.FloatTensor of size 128x32]
+            (2): Parameter containing: [torch.FloatTensor of size 128x32]
+            (3): Parameter containing: [torch.FloatTensor of size 128x32]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (3): ModuleList(
+      (0): Dropout(p=0.08118925150158363, inplace=False)
+      (1): EfficientGraphConv(
+        (In=128, Out=128, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=128, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 128x32]
+            (1): Parameter containing: [torch.FloatTensor of size 128x32]
+            (2): Parameter containing: [torch.FloatTensor of size 128x32]
+            (3): Parameter containing: [torch.FloatTensor of size 128x32]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(std)
+          (2): _AggLayer(max)
+        )
+      )
+      (2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=64, out_features=32, bias=True)
+    (5): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=32, out_features=10, bias=True)
+  )
+)
+{'lr': 0.0009263869626947979, 'batch_size': 32, 'wd': 0.0007592290244995363, 'dropout': 0.08118925150158363}
+({'test_loss': 0.8836823208644368, 'test_acc': 0.7094}, None)
+Total Params: 311401
+GcnHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 240)
+      (1): Embedding(4, 240)
+      (2): Embedding(12, 240)
+      (3): Embedding(12, 240)
+      (4): Embedding(10, 240)
+      (5): Embedding(6, 240)
+      (6): Embedding(6, 240)
+      (7): Embedding(2, 240)
+      (8): Embedding(2, 240)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GCNConv(240, 240)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GCNConv(240, 240)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GCNConv(240, 240)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GCNConv(240, 240)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=240, out_features=120, bias=True)
+    (1): BatchNorm1d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=120, out_features=60, bias=True)
+    (5): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=60, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 32, 'wd': 0.0001, 'dropout': 0.2}
+({'test_metric': 0.7383997373452558, 'test_loss': 0.12686761351692122}, None)
+Total Params: 313321
+GatHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 240)
+      (1): Embedding(4, 240)
+      (2): Embedding(12, 240)
+      (3): Embedding(12, 240)
+      (4): Embedding(10, 240)
+      (5): Embedding(6, 240)
+      (6): Embedding(6, 240)
+      (7): Embedding(2, 240)
+      (8): Embedding(2, 240)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GATConv(240, 30, heads=8)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GATConv(240, 30, heads=8)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GATConv(240, 30, heads=8)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GATConv(240, 240, heads=1)
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=240, out_features=120, bias=True)
+    (1): BatchNorm1d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=120, out_features=60, bias=True)
+    (5): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=60, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 32, 'wd': 0.0001, 'dropout': 0.0}
+({'test_metric': 0.7754919948241564, 'test_loss': 0.12565204209121045}, None)
+Total Params: 328717
+GatHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 184)
+      (1): Embedding(4, 184)
+      (2): Embedding(12, 184)
+      (3): Embedding(12, 184)
+      (4): Embedding(10, 184)
+      (5): Embedding(6, 184)
+      (6): Embedding(6, 184)
+      (7): Embedding(2, 184)
+      (8): Embedding(2, 184)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GATv2Conv(184, 23, heads=8)
+      (1): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GATv2Conv(184, 23, heads=8)
+      (1): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GATv2Conv(184, 23, heads=8)
+      (1): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GATv2Conv(184, 184, heads=1)
+      (1): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=184, out_features=92, bias=True)
+    (1): BatchNorm1d(92, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=92, out_features=46, bias=True)
+    (5): BatchNorm1d(46, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=46, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 64, 'wd': 0.0001, 'dropout': 0.0}
+({'test_metric': 0.7753085227601922, 'test_loss': 0.15104890573196686}, None)
+Total Params: 311405
+GinHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 240)
+      (1): Embedding(4, 240)
+      (2): Embedding(12, 240)
+      (3): Embedding(12, 240)
+      (4): Embedding(10, 240)
+      (5): Embedding(6, 240)
+      (6): Embedding(6, 240)
+      (7): Embedding(2, 240)
+      (8): Embedding(2, 240)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GINConv(nn=Linear(in_features=240, out_features=240, bias=True))
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GINConv(nn=Linear(in_features=240, out_features=240, bias=True))
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GINConv(nn=Linear(in_features=240, out_features=240, bias=True))
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GINConv(nn=Linear(in_features=240, out_features=240, bias=True))
+      (1): BatchNorm1d(240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=240, out_features=120, bias=True)
+    (1): BatchNorm1d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=120, out_features=60, bias=True)
+    (5): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=60, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 32, 'wd': 0.0001, 'dropout': 0.2}
+({'test_metric': 0.7530137700612217, 'test_loss': 0.13132837266018688}, None)
+Total Params: 313201
+SageHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 180)
+      (1): Embedding(4, 180)
+      (2): Embedding(12, 180)
+      (3): Embedding(12, 180)
+      (4): Embedding(10, 180)
+      (5): Embedding(6, 180)
+      (6): Embedding(6, 180)
+      (7): Embedding(2, 180)
+      (8): Embedding(2, 180)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): SAGEConv(180, 180)
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): SAGEConv(180, 180)
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): SAGEConv(180, 180)
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): SAGEConv(180, 180)
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=180, out_features=90, bias=True)
+    (1): BatchNorm1d(90, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=90, out_features=45, bias=True)
+    (5): BatchNorm1d(45, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=45, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 64, 'wd': 0.001, 'dropout': 0.2}
+({'test_metric': 0.7342938256822263, 'test_loss': 0.11480475400502865}, None)
+Total Params: 314641
+MpnnHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 180)
+      (1): Embedding(4, 180)
+      (2): Embedding(12, 180)
+      (3): Embedding(12, 180)
+      (4): Embedding(10, 180)
+      (5): Embedding(6, 180)
+      (6): Embedding(6, 180)
+      (7): Embedding(2, 180)
+      (8): Embedding(2, 180)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=180, out_features=90, bias=True)
+    (1): BatchNorm1d(90, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=90, out_features=45, bias=True)
+    (5): BatchNorm1d(45, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=45, out_features=1, bias=True)
+  )
+)
+{'lr': 0.00031622776601683794, 'batch_size': 64, 'wd': 0.0001, 'dropout': 0.0}
+({'test_metric': 0.7784372042720022, 'test_loss': 0.171326876227529}, None)
+Total Params: 314641
+MpnnHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 180)
+      (1): Embedding(4, 180)
+      (2): Embedding(12, 180)
+      (3): Embedding(12, 180)
+      (4): Embedding(10, 180)
+      (5): Embedding(6, 180)
+      (6): Embedding(6, 180)
+      (7): Embedding(2, 180)
+      (8): Embedding(2, 180)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=90, out_features=45, bias=True)
+          (1): Linear(in_features=90, out_features=45, bias=True)
+          (2): Linear(in_features=90, out_features=45, bias=True)
+          (3): Linear(in_features=90, out_features=45, bias=True)
+        )
+        (lin): Linear(in_features=180, out_features=180, bias=True)
+      )
+      (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=180, out_features=90, bias=True)
+    (1): BatchNorm1d(90, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=90, out_features=45, bias=True)
+    (5): BatchNorm1d(45, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=45, out_features=1, bias=True)
+  )
+)
+{'lr': 0.0001, 'batch_size': 32, 'wd': 0.001, 'dropout': 0.2}
+({'test_metric': 0.7752177523706523, 'test_loss': 0.1238452338707424}, None)
+Total Params: 323509
+EgcHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 296)
+      (1): Embedding(4, 296)
+      (2): Embedding(12, 296)
+      (3): Embedding(12, 296)
+      (4): Embedding(10, 296)
+      (5): Embedding(6, 296)
+      (6): Embedding(6, 296)
+      (7): Embedding(2, 296)
+      (8): Embedding(2, 296)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=296, Out=296, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=296, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 296x37]
+            (1): Parameter containing: [torch.FloatTensor of size 296x37]
+            (2): Parameter containing: [torch.FloatTensor of size 296x37]
+            (3): Parameter containing: [torch.FloatTensor of size 296x37]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=296, Out=296, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=296, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 296x37]
+            (1): Parameter containing: [torch.FloatTensor of size 296x37]
+            (2): Parameter containing: [torch.FloatTensor of size 296x37]
+            (3): Parameter containing: [torch.FloatTensor of size 296x37]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=296, Out=296, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=296, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 296x37]
+            (1): Parameter containing: [torch.FloatTensor of size 296x37]
+            (2): Parameter containing: [torch.FloatTensor of size 296x37]
+            (3): Parameter containing: [torch.FloatTensor of size 296x37]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=296, Out=296, H=8, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=296, out_features=32, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 296x37]
+            (1): Parameter containing: [torch.FloatTensor of size 296x37]
+            (2): Parameter containing: [torch.FloatTensor of size 296x37]
+            (3): Parameter containing: [torch.FloatTensor of size 296x37]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=296, out_features=148, bias=True)
+    (1): BatchNorm1d(148, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=148, out_features=74, bias=True)
+    (5): BatchNorm1d(74, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=74, out_features=1, bias=True)
+  )
+)
+{'lr': 0.0001, 'batch_size': 32, 'wd': 0.0001, 'dropout': 0.2}
+({'test_metric': 0.7881863303655922, 'test_loss': 0.13031567328125815}, None)
+Total Params: 317265
+EgcHIVNet(
+  (embedding): AtomEncoder(
+    (atom_embedding_list): ModuleList(
+      (0): Embedding(119, 224)
+      (1): Embedding(4, 224)
+      (2): Embedding(12, 224)
+      (3): Embedding(12, 224)
+      (4): Embedding(10, 224)
+      (5): Embedding(6, 224)
+      (6): Embedding(6, 224)
+      (7): Embedding(2, 224)
+      (8): Embedding(2, 224)
+    )
+  )
+  (in_feat_dropout): Dropout(p=0.2, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=224, Out=224, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=224, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 224x56]
+            (1): Parameter containing: [torch.FloatTensor of size 224x56]
+            (2): Parameter containing: [torch.FloatTensor of size 224x56]
+            (3): Parameter containing: [torch.FloatTensor of size 224x56]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(mean)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=224, Out=224, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=224, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 224x56]
+            (1): Parameter containing: [torch.FloatTensor of size 224x56]
+            (2): Parameter containing: [torch.FloatTensor of size 224x56]
+            (3): Parameter containing: [torch.FloatTensor of size 224x56]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(mean)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=224, Out=224, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=224, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 224x56]
+            (1): Parameter containing: [torch.FloatTensor of size 224x56]
+            (2): Parameter containing: [torch.FloatTensor of size 224x56]
+            (3): Parameter containing: [torch.FloatTensor of size 224x56]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(mean)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=224, Out=224, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=224, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 224x56]
+            (1): Parameter containing: [torch.FloatTensor of size 224x56]
+            (2): Parameter containing: [torch.FloatTensor of size 224x56]
+            (3): Parameter containing: [torch.FloatTensor of size 224x56]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(add)
+          (1): _AggLayer(mean)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (mlp): Sequential(
+    (0): Linear(in_features=224, out_features=112, bias=True)
+    (1): BatchNorm1d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=112, out_features=56, bias=True)
+    (5): BatchNorm1d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.0, inplace=False)
+    (8): Linear(in_features=56, out_features=1, bias=True)
+  )
+)
+{'lr': 0.0001, 'batch_size': 32, 'wd': 0.001, 'dropout': 0.2}
+({'test_metric': 0.7804766411093301, 'test_loss': 0.12166516639494387}, None)
+Total Params: 100816
+GcnArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=156, bias=True)
+  )
+  (convs): ModuleList(
+    (0): GCNConv(156, 156)
+    (1): GCNConv(156, 156)
+    (2): GCNConv(156, 156)
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=156, out_features=40, bias=True)
+)
+{'lr': 0.0023853323044733007, 'wd': 0.0001, 'dropout': 0.2}
+({'train_acc': 0.7868947999252263, 'val_acc': 0.7300244974663579, 'test_acc': 0.7202230315001131}, None)
+Total Params: 97320
+GatArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=152, bias=True)
+  )
+  (convs): ModuleList(
+    (0): GATConv(152, 19, heads=8)
+    (1): GATConv(152, 19, heads=8)
+    (2): GATConv(152, 152, heads=1)
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=152, out_features=40, bias=True)
+)
+{'lr': 0.0087876393444041, 'wd': 0.0001, 'dropout': 0.2}
+({'train_acc': 0.8243146655523911, 'val_acc': 0.7333803147756636, 'test_acc': 0.7178157726889287}, None)
+Total Params: 96248
+GatArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=112, bias=True)
+  )
+  (convs): ModuleList(
+    (0): GATv2Conv(112, 14, heads=8)
+    (1): GATv2Conv(112, 14, heads=8)
+    (2): GATv2Conv(112, 112, heads=1)
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=112, out_features=40, bias=True)
+)
+{'lr': 0.0087876393444041, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.7906114953651269, 'val_acc': 0.7322393368904997, 'test_acc': 0.7180626710285374}, None)
+Total Params: 100819
+GinArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=156, bias=True)
+  )
+  (convs): ModuleList(
+    (0): GINConv(nn=Linear(in_features=156, out_features=156, bias=True))
+    (1): GINConv(nn=Linear(in_features=156, out_features=156, bias=True))
+    (2): GINConv(nn=Linear(in_features=156, out_features=156, bias=True))
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=156, out_features=40, bias=True)
+)
+{'lr': 0.0087876393444041, 'wd': 0.0001, 'dropout': 0.2}
+({'train_acc': 0.7174101890236527, 'val_acc': 0.700526863317561, 'test_acc': 0.6882496965207909}, None)
+Total Params: 99860
+SageArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=115, bias=True)
+  )
+  (convs): ModuleList(
+    (0): SAGEConv(115, 115)
+    (1): SAGEConv(115, 115)
+    (2): SAGEConv(115, 115)
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(115, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(115, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(115, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=115, out_features=40, bias=True)
+)
+{'lr': 0.0023853323044733007, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.7934704918573581, 'val_acc': 0.727675425349844, 'test_acc': 0.7161697837582043}, None)
+Total Params: 102120
+MpnnArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=116, bias=True)
+  )
+  (convs): ModuleList(
+    (0): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+    (1): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+    (2): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=116, out_features=40, bias=True)
+)
+{'lr': 0.001, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.7937343992258717, 'val_acc': 0.7227423739051646, 'test_acc': 0.7096475526202086}, None)
+Total Params: 102120
+MpnnArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=116, bias=True)
+  )
+  (convs): ModuleList(
+    (0): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+    (1): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+    (2): Mpnn(
+      (message_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (update_layer): ModuleList(
+        (0): Linear(in_features=58, out_features=29, bias=True)
+        (1): Linear(in_features=58, out_features=29, bias=True)
+        (2): Linear(in_features=58, out_features=29, bias=True)
+        (3): Linear(in_features=58, out_features=29, bias=True)
+      )
+      (lin): Linear(in_features=116, out_features=116, bias=True)
+    )
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=116, out_features=40, bias=True)
+)
+{'lr': 0.03237394014347626, 'wd': 0.0001, 'dropout': 0.2}
+({'train_acc': 0.6821785553270802, 'val_acc': 0.6728413705157891, 'test_acc': 0.6608234059625949}, None)
+Calculating degree histogram required for PNA
+Total Params: 96332
+PnaArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=76, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PNAConv(76, 76, towers=4, edge_dim=None)
+    (1): PNAConv(76, 76, towers=4, edge_dim=None)
+    (2): PNAConv(76, 76, towers=4, edge_dim=None)
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(76, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(76, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(76, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=76, out_features=40, bias=True)
+)
+{'lr': 0.0036840314986403863, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.7568203560550247, 'val_acc': 0.7223396758280479, 'test_acc': 0.7133716025759727}, None)
+Total Params: 101336
+EgcArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=184, bias=True)
+  )
+  (convs): ModuleList(
+    (0): EfficientGraphConv(
+      (In=184, Out=184, H=8, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=184, out_features=32, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 184x23]
+          (1): Parameter containing: [torch.FloatTensor of size 184x23]
+          (2): Parameter containing: [torch.FloatTensor of size 184x23]
+          (3): Parameter containing: [torch.FloatTensor of size 184x23]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+      )
+    )
+    (1): EfficientGraphConv(
+      (In=184, Out=184, H=8, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=184, out_features=32, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 184x23]
+          (1): Parameter containing: [torch.FloatTensor of size 184x23]
+          (2): Parameter containing: [torch.FloatTensor of size 184x23]
+          (3): Parameter containing: [torch.FloatTensor of size 184x23]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+      )
+    )
+    (2): EfficientGraphConv(
+      (In=184, Out=184, H=8, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=184, out_features=32, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 184x23]
+          (1): Parameter containing: [torch.FloatTensor of size 184x23]
+          (2): Parameter containing: [torch.FloatTensor of size 184x23]
+          (3): Parameter containing: [torch.FloatTensor of size 184x23]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=184, out_features=40, bias=True)
+)
+{'lr': 0.005689810202763908, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.8156936915142785, 'val_acc': 0.7332796402563845, 'test_acc': 0.7212929243050841}, None)
+Total Params: 99464
+EgcArxivNet(
+  (embed): Sequential(
+    (0): Linear(in_features=128, out_features=136, bias=True)
+  )
+  (convs): ModuleList(
+    (0): EfficientGraphConv(
+      (In=136, Out=136, H=4, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=136, out_features=48, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 136x34]
+          (1): Parameter containing: [torch.FloatTensor of size 136x34]
+          (2): Parameter containing: [torch.FloatTensor of size 136x34]
+          (3): Parameter containing: [torch.FloatTensor of size 136x34]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+        (1): _AggLayer(max)
+        (2): _AggLayer(mean)
+      )
+    )
+    (1): EfficientGraphConv(
+      (In=136, Out=136, H=4, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=136, out_features=48, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 136x34]
+          (1): Parameter containing: [torch.FloatTensor of size 136x34]
+          (2): Parameter containing: [torch.FloatTensor of size 136x34]
+          (3): Parameter containing: [torch.FloatTensor of size 136x34]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+        (1): _AggLayer(max)
+        (2): _AggLayer(mean)
+      )
+    )
+    (2): EfficientGraphConv(
+      (In=136, Out=136, H=4, B=4, SL=True, SM=False, Bias=True)
+      (comb_weights): Linear(in_features=136, out_features=48, bias=True)
+      (bases_weight): ParameterList(
+          (0): Parameter containing: [torch.FloatTensor of size 136x34]
+          (1): Parameter containing: [torch.FloatTensor of size 136x34]
+          (2): Parameter containing: [torch.FloatTensor of size 136x34]
+          (3): Parameter containing: [torch.FloatTensor of size 136x34]
+      )
+      (aggs): ModuleList(
+        (0): _AggLayer(symadd)
+        (1): _AggLayer(max)
+        (2): _AggLayer(mean)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): BatchNorm1d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): BatchNorm1d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): BatchNorm1d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (out): Linear(in_features=136, out_features=40, bias=True)
+)
+{'lr': 0.0036840314986403863, 'wd': 0.001, 'dropout': 0.2}
+({'train_acc': 0.808315281336251, 'val_acc': 0.7335145474680358, 'test_acc': 0.7231858115754172}, None)
+Total Params: 11086658
+GcnCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 304)
+    (attribute_encoder): Embedding(10030, 304)
+    (depth_encoder): Embedding(21, 304)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GCNConv(304, 304)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GCNConv(304, 304)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GCNConv(304, 304)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GCNConv(304, 304)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=304, out_features=5002, bias=True)
+    (1): Linear(in_features=304, out_features=5002, bias=True)
+    (2): Linear(in_features=304, out_features=5002, bias=True)
+    (3): Linear(in_features=304, out_features=5002, bias=True)
+    (4): Linear(in_features=304, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.001584893192461114}
+({'test_metric': 0.14853315436967707}, None)
+Total Params: 11089090
+GatCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 304)
+    (attribute_encoder): Embedding(10030, 304)
+    (depth_encoder): Embedding(21, 304)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GATConv(304, 38, heads=8)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GATConv(304, 38, heads=8)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GATConv(304, 38, heads=8)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GATConv(304, 304, heads=1)
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=304, out_features=5002, bias=True)
+    (1): Linear(in_features=304, out_features=5002, bias=True)
+    (2): Linear(in_features=304, out_features=5002, bias=True)
+    (3): Linear(in_features=304, out_features=5002, bias=True)
+    (4): Linear(in_features=304, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.00025118864315095795}
+({'test_metric': 0.15041559800991183}, None)
+Total Params: 11140106
+GatCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 296)
+    (attribute_encoder): Embedding(10030, 296)
+    (depth_encoder): Embedding(21, 296)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GATv2Conv(296, 37, heads=8)
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GATv2Conv(296, 37, heads=8)
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GATv2Conv(296, 37, heads=8)
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GATv2Conv(296, 296, heads=1)
+      (1): BatchNorm1d(296, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=296, out_features=5002, bias=True)
+    (1): Linear(in_features=296, out_features=5002, bias=True)
+    (2): Linear(in_features=296, out_features=5002, bias=True)
+    (3): Linear(in_features=296, out_features=5002, bias=True)
+    (4): Linear(in_features=296, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.00025118864315095795}
+({'test_metric': 0.15688952649723562}, None)
+Total Params: 11086662
+GinCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 304)
+    (attribute_encoder): Embedding(10030, 304)
+    (depth_encoder): Embedding(21, 304)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): GINConv(nn=Linear(in_features=304, out_features=304, bias=True))
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): GINConv(nn=Linear(in_features=304, out_features=304, bias=True))
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): GINConv(nn=Linear(in_features=304, out_features=304, bias=True))
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): GINConv(nn=Linear(in_features=304, out_features=304, bias=True))
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=304, out_features=5002, bias=True)
+    (1): Linear(in_features=304, out_features=5002, bias=True)
+    (2): Linear(in_features=304, out_features=5002, bias=True)
+    (3): Linear(in_features=304, out_features=5002, bias=True)
+    (4): Linear(in_features=304, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.001584893192461114}
+({'test_metric': 0.1499502168446947}, None)
+Total Params: 11016905
+SageCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 293)
+    (attribute_encoder): Embedding(10030, 293)
+    (depth_encoder): Embedding(21, 293)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): SAGEConv(293, 293)
+      (1): BatchNorm1d(293, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): SAGEConv(293, 293)
+      (1): BatchNorm1d(293, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): SAGEConv(293, 293)
+      (1): BatchNorm1d(293, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): SAGEConv(293, 293)
+      (1): BatchNorm1d(293, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=293, out_features=5002, bias=True)
+    (1): Linear(in_features=293, out_features=5002, bias=True)
+    (2): Linear(in_features=293, out_features=5002, bias=True)
+    (3): Linear(in_features=293, out_features=5002, bias=True)
+    (4): Linear(in_features=293, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.000630957344480193}
+({'test_metric': 0.14526406050462912}, None)
+Total Params: 10979390
+MpnnCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 292)
+    (attribute_encoder): Embedding(10030, 292)
+    (depth_encoder): Embedding(21, 292)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=292, out_features=5002, bias=True)
+    (1): Linear(in_features=292, out_features=5002, bias=True)
+    (2): Linear(in_features=292, out_features=5002, bias=True)
+    (3): Linear(in_features=292, out_features=5002, bias=True)
+    (4): Linear(in_features=292, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.000630957344480193}
+({'test_metric': 0.15551001304145098}, None)
+Total Params: 10979390
+MpnnCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 292)
+    (attribute_encoder): Embedding(10030, 292)
+    (depth_encoder): Embedding(21, 292)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): Mpnn(
+        (message_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (update_layer): ModuleList(
+          (0): Linear(in_features=146, out_features=73, bias=True)
+          (1): Linear(in_features=146, out_features=73, bias=True)
+          (2): Linear(in_features=146, out_features=73, bias=True)
+          (3): Linear(in_features=146, out_features=73, bias=True)
+        )
+        (lin): Linear(in_features=292, out_features=292, bias=True)
+      )
+      (1): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=292, out_features=5002, bias=True)
+    (1): Linear(in_features=292, out_features=5002, bias=True)
+    (2): Linear(in_features=292, out_features=5002, bias=True)
+    (3): Linear(in_features=292, out_features=5002, bias=True)
+    (4): Linear(in_features=292, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.00025118864315095795}
+({'test_metric': 0.14442905650532767}, None)
+Manually calculating degree histogram required by PNA
+Total Params: 10999394
+PnaCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 272)
+    (attribute_encoder): Embedding(10030, 272)
+    (depth_encoder): Embedding(21, 272)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): PNAConv(272, 272, towers=4, edge_dim=None)
+      (1): BatchNorm1d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): PNAConv(272, 272, towers=4, edge_dim=None)
+      (1): BatchNorm1d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): PNAConv(272, 272, towers=4, edge_dim=None)
+      (1): BatchNorm1d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): PNAConv(272, 272, towers=4, edge_dim=None)
+      (1): BatchNorm1d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=272, out_features=5002, bias=True)
+    (1): Linear(in_features=272, out_features=5002, bias=True)
+    (2): Linear(in_features=272, out_features=5002, bias=True)
+    (3): Linear(in_features=272, out_features=5002, bias=True)
+    (4): Linear(in_features=272, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.00063096}
+({'test_metric': 0.15467465932200758}, None)
+Total Params: 11164738
+EgcCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 304)
+    (attribute_encoder): Embedding(10030, 304)
+    (depth_encoder): Embedding(21, 304)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=304, Out=304, H=8, B=8, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=304, out_features=64, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 304x38]
+            (1): Parameter containing: [torch.FloatTensor of size 304x38]
+            (2): Parameter containing: [torch.FloatTensor of size 304x38]
+            (3): Parameter containing: [torch.FloatTensor of size 304x38]
+            (4): Parameter containing: [torch.FloatTensor of size 304x38]
+            (5): Parameter containing: [torch.FloatTensor of size 304x38]
+            (6): Parameter containing: [torch.FloatTensor of size 304x38]
+            (7): Parameter containing: [torch.FloatTensor of size 304x38]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=304, Out=304, H=8, B=8, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=304, out_features=64, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 304x38]
+            (1): Parameter containing: [torch.FloatTensor of size 304x38]
+            (2): Parameter containing: [torch.FloatTensor of size 304x38]
+            (3): Parameter containing: [torch.FloatTensor of size 304x38]
+            (4): Parameter containing: [torch.FloatTensor of size 304x38]
+            (5): Parameter containing: [torch.FloatTensor of size 304x38]
+            (6): Parameter containing: [torch.FloatTensor of size 304x38]
+            (7): Parameter containing: [torch.FloatTensor of size 304x38]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=304, Out=304, H=8, B=8, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=304, out_features=64, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 304x38]
+            (1): Parameter containing: [torch.FloatTensor of size 304x38]
+            (2): Parameter containing: [torch.FloatTensor of size 304x38]
+            (3): Parameter containing: [torch.FloatTensor of size 304x38]
+            (4): Parameter containing: [torch.FloatTensor of size 304x38]
+            (5): Parameter containing: [torch.FloatTensor of size 304x38]
+            (6): Parameter containing: [torch.FloatTensor of size 304x38]
+            (7): Parameter containing: [torch.FloatTensor of size 304x38]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=304, Out=304, H=8, B=8, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=304, out_features=64, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 304x38]
+            (1): Parameter containing: [torch.FloatTensor of size 304x38]
+            (2): Parameter containing: [torch.FloatTensor of size 304x38]
+            (3): Parameter containing: [torch.FloatTensor of size 304x38]
+            (4): Parameter containing: [torch.FloatTensor of size 304x38]
+            (5): Parameter containing: [torch.FloatTensor of size 304x38]
+            (6): Parameter containing: [torch.FloatTensor of size 304x38]
+            (7): Parameter containing: [torch.FloatTensor of size 304x38]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+        )
+      )
+      (1): BatchNorm1d(304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=304, out_features=5002, bias=True)
+    (1): Linear(in_features=304, out_features=5002, bias=True)
+    (2): Linear(in_features=304, out_features=5002, bias=True)
+    (3): Linear(in_features=304, out_features=5002, bias=True)
+    (4): Linear(in_features=304, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.000630957344480193}
+({'test_metric': 0.1558295930220479}, None)
+Total Params: 10994102
+EgcCodeNet(
+  (embedding): ASTNodeEncoder(
+    (type_encoder): Embedding(98, 300)
+    (attribute_encoder): Embedding(10030, 300)
+    (depth_encoder): Embedding(21, 300)
+  )
+  (in_feat_dropout): Dropout(p=0.0, inplace=False)
+  (graph_layers): ModuleList(
+    (0): ModuleList(
+      (0): EfficientGraphConv(
+        (In=300, Out=300, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=300, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 300x75]
+            (1): Parameter containing: [torch.FloatTensor of size 300x75]
+            (2): Parameter containing: [torch.FloatTensor of size 300x75]
+            (3): Parameter containing: [torch.FloatTensor of size 300x75]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(min)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): ModuleList(
+      (0): EfficientGraphConv(
+        (In=300, Out=300, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=300, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 300x75]
+            (1): Parameter containing: [torch.FloatTensor of size 300x75]
+            (2): Parameter containing: [torch.FloatTensor of size 300x75]
+            (3): Parameter containing: [torch.FloatTensor of size 300x75]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(min)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): ModuleList(
+      (0): EfficientGraphConv(
+        (In=300, Out=300, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=300, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 300x75]
+            (1): Parameter containing: [torch.FloatTensor of size 300x75]
+            (2): Parameter containing: [torch.FloatTensor of size 300x75]
+            (3): Parameter containing: [torch.FloatTensor of size 300x75]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(min)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): ModuleList(
+      (0): EfficientGraphConv(
+        (In=300, Out=300, H=4, B=4, SL=True, SM=False, Bias=True)
+        (comb_weights): Linear(in_features=300, out_features=48, bias=True)
+        (bases_weight): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 300x75]
+            (1): Parameter containing: [torch.FloatTensor of size 300x75]
+            (2): Parameter containing: [torch.FloatTensor of size 300x75]
+            (3): Parameter containing: [torch.FloatTensor of size 300x75]
+        )
+        (aggs): ModuleList(
+          (0): _AggLayer(symadd)
+          (1): _AggLayer(min)
+          (2): _AggLayer(max)
+        )
+      )
+      (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (token_predictors): ModuleList(
+    (0): Linear(in_features=300, out_features=5002, bias=True)
+    (1): Linear(in_features=300, out_features=5002, bias=True)
+    (2): Linear(in_features=300, out_features=5002, bias=True)
+    (3): Linear(in_features=300, out_features=5002, bias=True)
+    (4): Linear(in_features=300, out_features=5002, bias=True)
+  )
+)
+{'lr': 0.001584893192461114}
+({'test_metric': 0.15847936260730136}, None)
